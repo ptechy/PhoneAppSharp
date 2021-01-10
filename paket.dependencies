@@ -1,0 +1,17 @@
+source https://api.nuget.org/v3/index.json
+
+nuget DotNetSeleniumExtras.PageObjects
+nuget Microsoft.Extensions.Configuration
+nuget Microsoft.Extensions.Configuration.FileExtensions
+nuget Microsoft.Extensions.Configuration.Json
+nuget Microsoft.NET.Test.Sdk
+nuget NLog
+nuget RazorEngine
+nuget RazorEngine.NetCore 3.1.0
+nuget selenium.WebDriver 4.0.0-alpha07 alpha
+nuget Selenium.WebDriver.ChromeDriver 87.0.4280.2000
+nuget Selenium.WebDriver.GeckoDriver 0.28.0
+nuget SeleniumExtras.WaitHelpers
+nuget specflow
+nuget SpecFlow.Assist.Dynamic
+nuget specflow.Nunit

@@ -1,0 +1,8 @@
+Selenium.WebDriver.GeckoDriver
+Selenium.WebDriver.ChromeDriver
+Microsoft.NET.Test.Sdk
+Nunit
+System.Configuration.ConfigurationManager
+Microsoft.Extensions.Configuration
+Microsoft.Extensions.Configuration.FileExtensions
+Microsoft.Extensions.Configuration.Json

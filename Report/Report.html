@@ -1,0 +1,985 @@
+﻿
+
+<html>
+	<head>
+		<title>Test Project</title>
+		<meta charset="utf-8"/>
+		<style type="text/css">
+			
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+
+.OpenOccupancy {
+    background-color: #AADD96;
+    color: black;
+}
+
+.ClosedOccupancy {
+	color:#FFFFFF;
+	background-color: #d45838;
+}
+
+
+.TrueStatus {
+    background-color: #AADD96;
+    color: black;
+}
+
+.FalseStatus {
+	color:#FFFFFF;
+	background-color: #d45838;
+}
+
+.restriction {
+	background-color: #fef3e7;
+}
+
+.mealPlan {
+	width: 50%;
+	background-color: #eeef92;
+}
+
+
+.ps{
+	color:#d45838
+}
+
+.defOccupancy{
+  height: 12px;
+  width: 12px;
+  font-size: 12px;
+  color:#000000;
+}
+
+
+
+.legendClose {
+	background-color: #d45838;
+}
+
+.card {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+	text-align: left;
+	border-radius: 5px;
+	background-color: #FFFFFF;
+	border: 1px solid #666666;
+	font-size: 11px;
+	padding: 0px 0px 2px 0px;
+	margin: 0px 3px 0px 1px;
+}
+.descCard {
+  width:100%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+  text-align: left;
+  border-radius: 5px;
+  background-color: #FFFFFF;
+  border: 1px solid #666666;
+  font-size: 11px;
+  margin: 0px 3px 0px 1px;
+}
+
+.descHead {
+	width: 100%;
+	text-align: center;
+	font-weight: bold;
+	padding: 0px 0px 0px 0px;
+	color: #FFFFFF;
+	border-bottom: 1px solid #666666;
+	background-color: #015173;
+}
+
+.qaImg {
+	margin: 2px 2px 10px 2px;
+	border: 1px solid #000000;
+	text-align: center;
+}
+
+.descScroll {
+	width: 100%;
+	text-align: left;
+	padding: 0px 2px 0px 2px;
+	overflow-y: auto;
+	height: 60px;
+}
+
+.cardHead{
+	text-align: center;
+	font-weight: bold;
+	padding: 0px 0px 0px 0px;
+	color: #FFFFFF;
+	border-bottom: 1px solid #666666;
+	background-color: #015173;
+}
+
+
+.cardHeadOk {
+	text-align: center;
+	font-weight: bold;	
+	padding: 2px 0px 2px 0px;
+	color: #FFFFFF;
+    border-bottom: 1px solid #666666;
+	background-color: #015173;
+}
+
+.cardHeadNok {
+	text-align: center;
+	font-weight: bold;
+	padding: 2px 0px 2px 0px;
+	color: #FFFFFF;
+	border-bottom: 1px solid #666666;
+	background-color: #B66969;
+}
+
+.cardScroll {
+	text-align: left;
+	padding: 2px 1px 2px 2px;
+	overflow-y: auto;
+}
+
+
+.plCard {
+	float: left;
+	height: 800px;
+	font-size: 11px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+	border-radius: 5px;
+	text-align: left;
+	background-color: #666666;
+	border: 1px solid #666666;
+	margin: 2px 1px 1px 2px;
+}
+
+.plHead {
+	text-align: center;
+	font-weight: bold;	
+	padding: 2px 0px 2px 0px;
+	color: #FFFFFF;
+    border-bottom: 1px solid #666666;
+	background-color: #015173;
+}
+
+
+
+table.gridpl {
+	font-family: verdana,arial,sans-serif;
+	font-size: 11px;
+	color: #333333;
+	border-width: 1px;
+	border-color: #666666;
+	border-collapse: collapse;
+	margin: 2px 2px 2px 2px;
+	background-color: #FFFFFF;
+	float: left;
+}
+
+table.gridpl th {
+	border-width: 1px;
+	padding: 2px;
+	color: #FFFFFF;
+	border-style: solid;
+	border-color: #666666;
+	background-color: #015173;
+}
+
+table.gridpl td {
+	border-width: 1px;
+	padding: 2px;
+	border-style: solid;
+	border-color: #666666;
+}
+
+
+
+
+
+
+div.horizontalScroll {
+  background-color: #FFFFFF;
+  overflow: auto;
+  white-space: nowrap;
+  height:160px;
+}
+
+
+
+.infoScroll {
+	text-align: left;
+	padding: 2px 1px 2px 2px;
+	background-color: #FFFFFF;
+	overflow-x: auto;
+	overflow-y: auto;
+	white-space: nowrap;
+}
+
+.plCards {
+	text-align: left;
+	padding: 2px 1px 2px 2px;
+	width: 100%;
+	background-color: #666666;
+	overflow-x: auto;
+	overflow-y: auto;
+	white-space: nowrap;
+}
+
+
+.infoCard {
+	float: left;
+	width: 160px;
+	height: 200px;
+	font-size: 11px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+	border-radius: 5px;
+	text-align: left;
+	border: 1px solid #666666;
+	margin: 2px 1px 1px 2px;
+}
+
+.infoCardHead {
+	text-align: center;
+	font-weight: bold;	
+	padding: 2px 0px 2px 0px;
+	color: #FFFFFF;
+    border-bottom: 1px solid #666666;
+	background-color: #015173;
+}
+
+
+
+
+.plScroll {
+	text-align: left;
+	padding: 2px 1px 2px 2px;
+	background-color: #FFFFFF;
+}
+
+
+
+
+
+
+.Okcheck {
+  display: block;
+  width: 100%;
+  margin: 0px 2px 0px 2px;
+  color:#092EFF;
+}
+
+.Okcheck:before {
+  content: "\2713";
+  height: 12px;
+  width: 6px;
+  font-size: 12px;
+  color: #78b13f;  
+}
+
+.Nokcheck {
+  display: block;
+  margin: 0px 2px 0px 2px;
+  width: 100%;
+  color:#DB212E;
+}
+
+.Nokcheck:before {
+  content: "\2713";
+  height: 12px;
+  width: 6px;
+  font-size: 15px;
+  color: #DB212E;
+  
+}
+
+
+
+
+.pointer {
+	cursor: pointer;
+}
+.tsPointer {
+	cursor: pointer;
+}
+
+/* Style the button that is used to open and close the collapsible content */
+.collapsible {
+  background-color: #F2F2F2;
+  color: #444;
+  cursor: pointer;
+  padding: 5px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;  
+  cursor: pointer;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.content {
+  width: 98%;
+  padding: 0 5px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+
+.collapsible:before {
+  content: '\02795'; /* Unicode character for "plus" sign (+) */
+  font-size: 10px;
+  color: white;
+  float: left;
+  margin: 0px 10px 0px 2px;
+}
+
+.active:before {
+  content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+
+
+.tsPointer {
+  font-size: 10px;
+  float: left;
+  margin: 0px 10px 0px 2px;
+}
+
+
+
+
+
+
+
+
+.summaryCorner {
+	width: 100%;
+	border-radius: 5px;
+	border: 1px solid #000000;
+	padding: 10px;
+	margin: 1px 1px 1px 1px;
+	background-color: #015173;
+	height: 50px;
+}
+
+.propertiesCorner {
+	width: 100%;
+	border-radius: 5px;
+	border: 1px solid #000000;
+	margin: 1px 1px 1px 1px;
+	height: 20px;
+}
+
+.propertiesTableCorner {
+	width: 10%;
+	border-radius: 5px;
+	border: 1px solid #000000;
+	height: 19px;
+	float: left;
+	padding: 1px;
+	margin: 1px 1px 1px 1px;
+	font-family: verdana,arial,sans-serif;
+	font-size: 11px;
+	text-align: center;
+	background-color: #FCFCFC;
+}
+
+
+.summaryTableCorner {
+	width: 8%;
+	border-radius: 5px;
+	border: 1px solid #000000;
+	padding: 2px 2px 2px 2px;
+	margin: 2px 1px 1px 5px;
+	height: 20px;
+	float: left;
+	background-color: #FCFCFC;
+}
+
+	.summaryTableCorner th {
+		color: #6F6F6F;
+	}
+
+	.summaryTableCorner td {
+		text-align: center;
+		font-weight: bold;
+	}
+
+.testSuiteCorner {
+	width: 100%;
+	border-radius: 5px;
+	border: 1px solid #000000;
+	padding: 0px;
+	margin: 8px 1px 1px 1px;
+	height: 40px;
+	background-color: #F2F2F2;
+}
+
+table.descBorder {
+	table-layout: fixed;
+	font-family: verdana,arial,sans-serif;
+	border: 1px solid #000000;
+	font-size: 11px;
+	border-collapse: collapse;
+	margin: 2px 2px 2px 2px;
+	float: left;
+}
+
+table.desc {
+	table-layout: fixed;
+	font-family: verdana,arial,sans-serif;
+	font-size: 11px;
+	border-collapse: collapse;
+	margin: 2px 2px 2px 2px;
+	float: left;
+}
+
+	table.desc td {
+		padding: 1px 1px 1px 1px;
+	}
+
+.testContext {
+	width: 100%;
+	border: 1px solid #000000;
+	margin: 20px 1px 1px 1px;
+}
+
+.Ok {
+	font-weight: bold;
+	background-color: #AADD96;
+	color: black;
+}
+
+.Nok {
+	font-weight: bold;
+	background-color: #B66969;
+	color: black;
+}
+
+.HeadOk {
+	font-weight: bold;
+	background-color: #AADD96;
+	border: 1px solid #000000;
+	color: black;
+}
+
+.HeadNok {
+	font-weight: bold;
+	background-color: #B66969;
+	border: 1px solid #000000;
+	color: black;
+}
+
+
+.CornerOk {
+	border-radius: 5px;
+	font-weight: bold;
+	background-color: #AADD96;
+	color: black;
+	text-align: center;
+	padding: 10px;
+	margin: 1px 1px 1px 1px;
+	width: 30px;
+	height: 10px;
+}
+
+.CornerNok {
+	border-radius: 5px;
+	font-weight: bold;
+	background-color: #B66969;
+	color: black;
+	text-align: center;
+	padding: 10px;
+	margin: 1px 1px 1px 1px;
+	width: 30px;
+	height: 10px;
+}
+
+.transactionCorner {
+	width: 99%;
+	border-radius: 5px;
+	border: 1px solid #000000;
+	padding: 10px;
+	height: 40px;
+	margin: 5px auto;
+}
+
+.boxContent {
+	display: none;
+}
+
+td {
+	vertical-align: top;
+	word-wrap: break-word;
+}
+
+
+table.testCaseDesc {
+	table-layout: fixed;
+	width: 100%;
+	font-size: 11px;
+	font-family: verdana,arial,sans-serif;
+	color: #015173;
+	border: 1px solid #000000;
+	padding: 2px 2px 2px 2px;
+	margin: 2px 2px 2px 2px;
+	background-color: #FFFFFF;
+}
+
+.embedded {
+	font-family: verdana,arial,sans-serif;
+	font-size: 11px;
+	color: #333333;
+	border-width: 0px;
+	border-color: #666666;
+	border-collapse: collapse;
+	margin: 0px 0px 0px 0px;
+	float: left;
+}
+
+p {
+	padding: 1px;
+	word-wrap: break-word;
+}
+
+
+table.gridtable {
+	table-layout: fixed;
+	font-family: verdana,arial,sans-serif;
+	font-size: 11px;
+	color: #333333;
+	border-width: 1px;
+	border-color: #666666;
+	border-collapse: collapse;
+	margin: 2px 2px 2px 2px;
+	float: left;
+}
+
+table.gridtable th {
+	table-layout: fixed;
+	border-width: 1px;
+	padding: 2px;
+	color: #FFFFFF;
+	border-style: solid;
+	border-color: #666666;
+	background-color: #015173;
+}
+
+table.gridtable td {
+	table-layout: fixed;
+	border-width: 1px;
+	padding: 2px;
+	border-style: solid;
+	border-color: #666666;
+}
+
+table.alternateRows {
+	table-layout: fixed;
+	font-family: verdana,arial,sans-serif;
+	font-size: 9px;
+	border-width: 1px;
+	border-color: #666666;
+	border-collapse: collapse;
+	margin: 1px 1px 1px 1px;
+	float: left;
+}
+
+	table.alternateRows tr.d0 td {
+		table-layout: fixed;
+		background-color: #FDF5E6;
+		color: black;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+	}
+
+	table.alternateRows tr.d1 td {
+		table-layout: fixed;
+		font-size: 9px;
+		background-color: #CBD1D4;
+		color: black;
+	}
+
+table.bus {
+	table-layout: fixed;
+	font-family: verdana,arial,sans-serif;
+	font-size: 9px;
+	border-width: 1px;
+	border-color: #666666;
+	border-collapse: collapse;
+	margin: 4px 4px 4px 4px;
+	float: left;
+}
+
+table.bus td {
+		padding: 0px 0px 0px 2px;
+		border: 1px solid black;
+	}
+
+table.bus tr.d0 td {
+	table-layout: fixed;
+	background-color: #FDF5E6;
+	color: black;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+table.bus tr.d1 td {
+	table-layout: fixed;
+	font-size: 9px;
+	background-color: #CBD1D4;
+	color: black;
+}
+
+pre {
+	white-space: pre-wrap;
+	white-space: -moz-pre-wrap;
+	white-space: -pre-wrap;
+	white-space: -o-pre-wrap;
+	word-wrap: break-word;
+}
+
+
+
+
+
+
+/* The Modal (background) */
+.modal {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	padding-top: 100px; /* Location of the box */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+	background-color: #fefefe;
+	margin: auto;
+	padding: 20px;
+	border: 1px solid #888;
+	width: 80%;
+}
+
+/* The Close Button */
+.close {
+	color: #aaaaaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+
+
+
+/* PrismJS 1.20.0
+https://prismjs.com/download.html#themes=prism&languages=markup+json+jsonp+json5 */
+/**
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: black;
+	background: none;
+	text-shadow: 0 1px white;
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+	pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+	code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+		text-shadow: none;
+		background: #b3d4fc;
+	}
+
+	pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+	code[class*="language-"]::selection, code[class*="language-"] ::selection {
+		text-shadow: none;
+		background: #b3d4fc;
+	}
+
+@media print {
+	code[class*="language-"],
+	pre[class*="language-"] {
+		text-shadow: none;
+	}
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #f5f2f0;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: slategray;
+}
+
+.token.punctuation {
+	color: #999;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #905;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #690;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+	color: #9a6e3a;
+	background: hsla(0, 0%, 100%, .5);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+	color: #07a;
+}
+
+.token.function,
+.token.class-name {
+	color: #DD4A68;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+	color: #e90;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+
+
+		</style>
+	</head>
+	<body>
+		<table width="100%" class="summaryCorner">
+			<tr>
+				<td width="100%">
+					<table class="summaryTableCorner">
+						<tr>
+							<th>Total</th>
+						</tr>
+						<tr>
+							<td id="Total">17</td>
+						</tr>
+					</table>
+					<table class="summaryTableCorner">
+						<tr>
+							<th>Passed</th>
+						</tr>
+						<tr>
+							<td id="Passed">14</td>
+						</tr>
+					</table>
+					<table class="summaryTableCorner">
+						<tr>
+							<th>Failed</th>
+						</tr>
+						<tr>
+							<td id="Failed">3</td>
+						</tr>
+					</table>
+					<table class="summaryTableCorner">
+						<tr>
+							<th>Start</th>
+						</tr>
+						<tr>
+							<td id="Duration">2021-01-10</td>
+						</tr>
+					</table>
+					<table class="summaryTableCorner">
+						<tr>
+							<th>Start</th>
+						</tr>
+						<tr>
+							<td id="Duration">19:06:37</td>
+						</tr>
+					</table>
+
+					<table class="summaryTableCorner">
+						<tr>
+							<th>Start</th>
+						</tr>
+						<tr>
+							<td id="Duration">9m 47s</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+		<table width="100%" class="testSuiteCorner">
+			<tr>
+				<td>
+					<div class="collapsible">
+							<table width="98%" class="desc" onclick="navigateToHtml('2021-01-10-1906375232')">
+								<tr>
+									<td width="1%">&nbsp;</td>
+									<td width="10%" class="CornerOk">Ok</td>
+									<td width="1%">&nbsp;</td>
+									<td width="50%">EditLink</td>
+									<td width="5%">Total : 2</td>
+									<td width="5%">Passed : 2</td>
+									<td width="5%">Failed : 0 </td>
+									<td width="10%">Start : 19:06:37</td>
+									<td width="10%">Duration : 0m 59s</td>
+								</tr>
+							</table>
+					</div>
+				</td>
+			</tr>
+		</table>
+		<table width="100%" class="testSuiteCorner">
+			<tr>
+				<td>
+					<div class="collapsible">
+							<table width="98%" class="desc" onclick="navigateToHtml('2021-01-10-1907394271')">
+								<tr>
+									<td width="1%">&nbsp;</td>
+									<td width="10%" class="CornerNok">Nok</td>
+									<td width="1%">&nbsp;</td>
+									<td width="50%">AddNewEntry</td>
+									<td width="5%">Total : 7</td>
+									<td width="5%">Passed : 6</td>
+									<td width="5%">Failed : 1 </td>
+									<td width="10%">Start : 19:07:39</td>
+									<td width="10%">Duration : 4m 18s</td>
+								</tr>
+							</table>
+					</div>
+				</td>
+			</tr>
+		</table>
+		<table width="100%" class="testSuiteCorner">
+			<tr>
+				<td>
+					<div class="collapsible">
+							<table width="98%" class="desc" onclick="navigateToHtml('2021-01-10-1911586627')">
+								<tr>
+									<td width="1%">&nbsp;</td>
+									<td width="10%" class="CornerNok">Nok</td>
+									<td width="1%">&nbsp;</td>
+									<td width="50%">EditExistingEntry</td>
+									<td width="5%">Total : 5</td>
+									<td width="5%">Passed : 4</td>
+									<td width="5%">Failed : 1 </td>
+									<td width="10%">Start : 19:11:58</td>
+									<td width="10%">Duration : 2m 54s</td>
+								</tr>
+							</table>
+					</div>
+				</td>
+			</tr>
+		</table>
+		<table width="100%" class="testSuiteCorner">
+			<tr>
+				<td>
+					<div class="collapsible">
+							<table width="98%" class="desc" onclick="navigateToHtml('2021-01-10-1914533940')">
+								<tr>
+									<td width="1%">&nbsp;</td>
+									<td width="10%" class="CornerNok">Nok</td>
+									<td width="1%">&nbsp;</td>
+									<td width="50%">NewSearch</td>
+									<td width="5%">Total : 3</td>
+									<td width="5%">Passed : 2</td>
+									<td width="5%">Failed : 1 </td>
+									<td width="10%">Start : 19:14:53</td>
+									<td width="10%">Duration : 1m 35s</td>
+								</tr>
+							</table>
+					</div>
+				</td>
+			</tr>
+		</table>
+		<script>
+			var coll = document.getElementsByClassName("collapsible");
+			var i;
+			for (i = 0; i < coll.length; i++) {coll[i].addEventListener("click" , function () {this.classList.toggle("active" );var content = this.nextElementSibling;if (content.style.display ==="block" ) {content.style.display="none" ;} else {content.style.display="block" ;}});}function showModal(modalId) {var modal = document.getElementById(modalId);// Get the <span> element that closes the modal
+						var closeId = 'close' + modalId;
+						var span = document.getElementById(closeId);
+						modal.style.display = "block";
+						}
+			function navigateToHtml(htmlId) {
+			var file = './' + htmlId + "/index.html";
+			window.location.href = file;
+			}
+					</script>
+				</body>
+			</html>

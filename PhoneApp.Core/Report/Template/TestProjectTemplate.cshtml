@@ -1,0 +1,111 @@
+﻿
+@using System.Collections.Generic
+@using System.Diagnostics
+@using System.Linq
+@using System.Xml.Linq
+
+<html>
+	<head>
+		<title>Test Project</title>
+		<meta charset="utf-8"/>
+		<style type="text/css">
+			TEST_STYLES
+		</style>
+	</head>
+	<body>
+		<table width="100%" class="summaryCorner">
+			<tr>
+				<td width="100%">
+					<table class="summaryTableCorner">
+						<tr>
+							<th>Total</th>
+						</tr>
+						<tr>
+							<td id="Total">@Model.Measure.TestCounter.Total</td>
+						</tr>
+					</table>
+					<table class="summaryTableCorner">
+						<tr>
+							<th>Passed</th>
+						</tr>
+						<tr>
+							<td id="Passed">@Model.Measure.TestCounter.Passed</td>
+						</tr>
+					</table>
+					<table class="summaryTableCorner">
+						<tr>
+							<th>Failed</th>
+						</tr>
+						<tr>
+							<td id="Failed">@Model.Measure.TestCounter.Failed</td>
+						</tr>
+					</table>
+					<table class="summaryTableCorner">
+						<tr>
+							<th>Start</th>
+						</tr>
+						<tr>
+							<td id="Duration">@Model.Measure.TimerReport.Date</td>
+						</tr>
+					</table>
+					<table class="summaryTableCorner">
+						<tr>
+							<th>Start</th>
+						</tr>
+						<tr>
+							<td id="Duration">@Model.Measure.TimerReport.StartDate</td>
+						</tr>
+					</table>
+
+					<table class="summaryTableCorner">
+						<tr>
+							<th>Start</th>
+						</tr>
+						<tr>
+							<td id="Duration">@Model.Measure.TimerReport.Duration</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+		@foreach (var testSuiteReport in Model.TestSuiteReports)
+		{
+			int counter =654321;
+
+		<table width="100%" class="testSuiteCorner">
+			<tr>
+				<td>
+					<div class="collapsible">
+							<table width="98%" class="desc" onclick="navigateToHtml('@(testSuiteReport.Settings.FolderName)')">
+								<tr>
+									<td width="1%">&nbsp;</td>
+									<td width="10%" class="Corner@(testSuiteReport.Measure.Status)">@testSuiteReport.Measure.Status</td>
+									<td width="1%">&nbsp;</td>
+									<td width="50%">@testSuiteReport.Measure.Name</td>
+									<td width="5%">Total : @testSuiteReport.Measure.TestCounter.Total</td>
+									<td width="5%">Passed : @testSuiteReport.Measure.TestCounter.Passed</td>
+									<td width="5%">Failed : @testSuiteReport.Measure.TestCounter.Failed </td>
+									<td width="10%">Start : @testSuiteReport.Measure.TimerReport.StartDate</td>
+									<td width="10%">Duration : @testSuiteReport.Measure.TimerReport.Duration</td>
+								</tr>
+							</table>
+					</div>
+				</td>
+			</tr>
+		</table>
+		}
+		<script>
+			var coll = document.getElementsByClassName("collapsible");
+			var i;
+			for (i = 0; i < coll.length; i++) {coll[i].addEventListener("click" , function () {this.classList.toggle("active" );var content = this.nextElementSibling;if (content.style.display ==="block" ) {content.style.display="none" ;} else {content.style.display="block" ;}});}function showModal(modalId) {var modal = document.getElementById(modalId);// Get the <span> element that closes the modal
+						var closeId = 'close' + modalId;
+						var span = document.getElementById(closeId);
+						modal.style.display = "block";
+						}
+			function navigateToHtml(htmlId) {
+			var file = './' + htmlId + "/index.html";
+			window.location.href = file;
+			}
+					</script>
+				</body>
+			</html>

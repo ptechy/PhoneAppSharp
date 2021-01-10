@@ -1,0 +1,21 @@
+{
+  "generator": {
+    "allowDebugGeneratedFiles": true,
+    "allowRowTests": true,
+    "generateAsyncTests": false
+  },
+  "trace": {
+    "traceSuccessfulSteps": true,
+    "traceTimings": true,
+    "minTracedDuration": "0:0:0.1",
+    "stepDefinitionSkeletonStyle": "RegexAttribute"
+  },
+  "stepAssemblies": [
+    {
+      "assembly": "SpecFlow.Assist.Dynamic"
+    },
+    {
+      "assembly": "Jacket.Tests.Specs"
+    }
+  ]
+}

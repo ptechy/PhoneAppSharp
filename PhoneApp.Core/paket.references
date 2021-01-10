@@ -1,0 +1,7 @@
+NLog
+selenium.WebDriver
+SeleniumExtras.WaitHelpers
+Selenium.WebDriver.ChromeDriver
+Selenium.WebDriver.GeckoDriver
+DotNetSeleniumExtras.PageObjects
+RazorEngine.NetCore
